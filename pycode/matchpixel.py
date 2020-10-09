@@ -13,8 +13,8 @@ import sys
   
 gama = Table.read(sys.argv[1])
 path_dir = sys.argv[2]
-path_new = '/home/priscila/devel/mestrado/results'
-error = float(sys.argv[3])
+path_new = sys.argv[3]
+error = float(sys.argv[4])
 
 def matching_index(base_catalog_ra, base_catalog_dec, catalog_ra, catalog_dec,
                    error):
