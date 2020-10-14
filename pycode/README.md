@@ -2,7 +2,7 @@ match.py
 
 Usage example:
 
-$python `table1` `table2` `destination path`
+$python  match.py `table1` `table2` `destination path`
 
 Requirements:
 astropy, numpy, esutil
