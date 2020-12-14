@@ -32,7 +32,7 @@ RUN tar -xzvf root_v5.34.11.Linux-slc6_amd64-gcc4.6.tar.gz
 
 RUN git clone https://github.com/IftachSadeh/ANNZ.git
 
-RUN apt-get purge gcc curl libfreetype6 libssl-dev git python-pip -y && rm -rf /var/cache/apt/lists
+RUN apt-get purge  curl git python-pip -y && rm -rf /var/cache/apt/lists
 
 WORKDIR /software/ANNZ
 
