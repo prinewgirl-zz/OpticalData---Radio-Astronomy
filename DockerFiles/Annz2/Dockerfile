@@ -8,9 +8,9 @@ ENV  ROOTSYS=/software/root
 
 ENV LD_LIBRARY_PATH=/software/root/lib
 
-ENV TERM=xterm
+ENV TERM=linux
 
-RUN apt-get update && apt-get install gcc wget libfreetype6 libssl-dev git python-pip -y
+RUN apt-get update && apt-get install gcc curl libfreetype6 libssl-dev git python-pip -y
 
 RUN pip install --upgrade pip
 
@@ -26,11 +26,13 @@ RUN mkdir -p /software
 
 WORKDIR /software
 
-RUN wget  https://root.cern.ch/download/root_v5.34.11.Linux-slc6_amd64-gcc4.6.tar.gz
+RUN curl -L https://root.cern.ch/download/root_v5.34.11.Linux-slc6_amd64-gcc4.6.tar.gz --output root_v5.34.11.Linux-slc6_amd64-gcc4.6.tar.gz
 
 RUN tar -xzvf root_v5.34.11.Linux-slc6_amd64-gcc4.6.tar.gz
 
 RUN git clone https://github.com/IftachSadeh/ANNZ.git
+
+RUN apt-get purge gcc curl libfreetype6 libssl-dev git python-pip -y && rm -rf /var/cache/apt/lists
 
 WORKDIR /software/ANNZ
 
