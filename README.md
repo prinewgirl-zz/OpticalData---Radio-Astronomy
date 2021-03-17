@@ -1,4 +1,3 @@
 # OpticalData
-Data and drafts used by me in my master degree
+Data and drafts used by me to deal with radio astronomy data.
 
-Here you found some of my work done in my MSc.
